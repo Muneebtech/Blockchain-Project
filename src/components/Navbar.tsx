@@ -1,8 +1,35 @@
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
-
+import {
+  useAccount,
+  useConnect,
+  useDisconnect,
+  useEnsAvatar,
+  useEnsName,
+} from "wagmi";
+import dynamic from "next/dynamic";
+import { AccountComponentProps } from "@/components/Account";
+import { WalletComponentProps } from "@/components/WalletOptions";
+const AccountComponent = dynamic<AccountComponentProps>(
+  () => import("./Account" as any),
+  {
+    ssr: false,
+  }
+);
+const WalletOptions = dynamic<WalletComponentProps>(
+  () => import("./WalletOptions" as any),
+  {
+    ssr: false,
+  }
+);
 const Navbar = () => {
+  const { isConnected } = useAccount();
+  const { address } = useAccount();
+  const { disconnect } = useDisconnect();
+  const { connect, connectors } = useConnect();
+  const { data: ensName } = useEnsName({ address });
+  const { data: ensAvatar } = useEnsAvatar({ name: ensName! });
   return (
     <div className="w-full">
       <nav className="container relative flex flex-wrap items-center justify-between mx-auto lg:justify-between xl:px-0">
@@ -26,10 +53,16 @@ const Navbar = () => {
         </>
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <button className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
-            Connect Wallet
-          </button>
-
+          {isConnected ? (
+            <AccountComponent
+              disconnect={disconnect}
+              address={address}
+              ensName={ensName}
+              ensAvatar={ensAvatar}
+            />
+          ) : (
+            <WalletOptions connect={connect} connectors={connectors} />
+          )}
           <ThemeChanger />
         </div>
       </nav>
