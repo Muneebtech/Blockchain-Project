@@ -1,5 +1,3 @@
-// SectionComponent.tsx
-
 import { useTheme } from "next-themes";
 import React, { forwardRef } from "react";
 
@@ -26,13 +24,11 @@ const Section: React.ForwardRefRenderFunction<HTMLDivElement, SectionProps> = (
       } mx-auto flex p-8 flex-col lg:flex-row md:flex-col items-center lg:items-center py-8 ${sectionBackgroundColor} ${sectionTextColor} border-b border-gray-300 `}
       ref={ref}
     >
-      {/* Text Column */}
       <div>
         <h2 className="text-4xl font-bold  mb-4">{title}</h2>
         <p className=" text-2xl leading-relaxed">{description}</p>
       </div>
 
-      {/* Image Column */}
       <div className={`mt-6 lg:mt-0`}>
         <img src={imageSrc} alt={imageAlt} className="w-full" />
       </div>
