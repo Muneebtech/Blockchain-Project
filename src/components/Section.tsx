@@ -23,7 +23,7 @@ const Section: React.ForwardRefRenderFunction<HTMLDivElement, SectionProps> = (
     <div
       className={`container ${
         reverse ? "flex-row-reverse  lg:flex-row-reverse" : "flex-row"
-      } mx-auto flex p-8 flex-col lg:flex-row md:flex-col items-center lg:items-center py-8 ${sectionBackgroundColor} ${sectionTextColor} border border-gray-300 `}
+      } mx-auto flex p-8 flex-col lg:flex-row md:flex-col items-center lg:items-center py-8 ${sectionBackgroundColor} ${sectionTextColor} border-b border-gray-300 `}
       ref={ref}
     >
       {/* Text Column */}

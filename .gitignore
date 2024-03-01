@@ -38,3 +38,5 @@ next-env.d.ts
 
 # error logs
 error.log
+/error.log
+.error.log

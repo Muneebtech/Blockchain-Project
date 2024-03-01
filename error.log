@@ -24,3 +24,7 @@
 {"level":"error","message":"address with value '0x2170ed0880ac9a755fds29b2688956bd959f933f8' is not a valid hex address","timestamp":"2024-03-01T13:47:40.011Z"}
 {"level":"error","message":"address with value '0x2170ed0880ac9a755fds29b2688956bd959f933f8' is not a valid hex address","timestamp":"2024-03-01T13:49:37.539Z"}
 {"level":"error","message":"address with value '0x2170ed0880ac9a755fds29b2688956bd959f933f8' is not a valid hex address","timestamp":"2024-03-01T13:49:39.925Z"}
+{"level":"error","message":"Invalid data format in API response","timestamp":"2024-03-01T14:28:51.651Z"}
+{"level":"error","message":"Invalid data format in API response","timestamp":"2024-03-01T14:29:08.494Z"}
+{"level":"error","message":"Invalid data format in API response","timestamp":"2024-03-01T14:30:16.943Z"}
+{"level":"error","message":"Invalid data format in API response","timestamp":"2024-03-01T14:30:29.758Z"}
