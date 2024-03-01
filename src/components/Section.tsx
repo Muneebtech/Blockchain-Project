@@ -1,5 +1,8 @@
 // SectionComponent.tsx
 
+import { useTheme } from "next-themes";
+import React, { forwardRef } from "react";
+
 interface SectionProps {
   title: string;
   description: string;
@@ -8,23 +11,25 @@ interface SectionProps {
   reverse?: boolean;
 }
 
-const Section: React.FC<SectionProps> = ({
-  title,
-  description,
-  imageSrc,
-  imageAlt,
-  reverse,
-}) => {
+const Section: React.ForwardRefRenderFunction<HTMLDivElement, SectionProps> = (
+  { title, description, imageSrc, imageAlt, reverse },
+  ref
+) => {
+  const { theme } = useTheme();
+  const sectionBackgroundColor =
+    theme === "dark" ? "bg-gray-900" : "bg-gray-100";
+  const sectionTextColor = theme === "dark" ? "text-white" : "text-gray-800";
   return (
     <div
       className={`container ${
         reverse ? "flex-row-reverse  lg:flex-row-reverse" : "flex-row"
-      } mx-auto flex flex-col lg:flex-row md:flex-col items-center lg:items-center py-8`}
+      } mx-auto flex p-8 flex-col lg:flex-row md:flex-col items-center lg:items-center py-8 ${sectionBackgroundColor} ${sectionTextColor} border-b border-gray-300 `}
+      ref={ref}
     >
       {/* Text Column */}
       <div>
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">{title}</h2>
-        <p className="text-gray-600 text-2xl leading-relaxed">{description}</p>
+        <h2 className="text-4xl font-bold  mb-4">{title}</h2>
+        <p className=" text-2xl leading-relaxed">{description}</p>
       </div>
 
       {/* Image Column */}
@@ -35,4 +40,4 @@ const Section: React.FC<SectionProps> = ({
   );
 };
 
-export default Section;
+export default forwardRef(Section);

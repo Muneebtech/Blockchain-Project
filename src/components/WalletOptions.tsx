@@ -1,15 +1,14 @@
 import { Connector } from "wagmi";
-
 export interface WalletComponentProps {
-  connect: (param: {}) => void;
-  connectors: Connector[];
+  connect: any;
+  connectors: any;
 }
 
 const WalletOptions: React.FC<WalletComponentProps> = ({
   connect,
   connectors,
 }) => {
-  return connectors.map((connector: Connector, index) => (
+  return connectors.map((connector: Connector, index : number) => (
     <div key={index}>
       <button
         className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5 flex justify-evenly items-center gap-2"

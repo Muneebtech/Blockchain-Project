@@ -1,8 +1,8 @@
 export interface AccountComponentProps {
-  address: string;
+  address: any;
   disconnect: () => void;
-  ensName: string | null;
-  ensAvatar: string | null;
+  ensName: string | any;
+  ensAvatar: string | any;
 }
 
 const AccountComponent: React.FC<AccountComponentProps> = ({
@@ -12,12 +12,11 @@ const AccountComponent: React.FC<AccountComponentProps> = ({
   ensAvatar,
 }) => (
   <div className="flex items-center gap-2 justify-evenly">
-    <span className="hidden md:block">Address: {address}</span>
     <button
       onClick={disconnect}
       className="px-4 py-2 text-white bg-indigo-600  rounded-md md:ml-5"
     >
-      Disconnect
+      Disconnect Wallet
     </button>
   </div>
 );
