@@ -67,7 +67,7 @@ export const getServerSideProps = async () => {
   let data = await fetchEthereumPrice();
   return {
     props: {
-      data,
+      data: data ?? null,
     },
   };
 };
