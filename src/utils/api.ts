@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
+import logger from "./logger";
 
 interface ApiFunctionOptions {
   method?: "get" | "post" | "put" | "delete";
@@ -29,6 +30,6 @@ export const fetchApi = async (
       message: error.response?.data?.message || error.message,
       status: error.response?.status,
     };
-    console.log(apiError.message);
+    logger.error(apiError.message);
   }
 };

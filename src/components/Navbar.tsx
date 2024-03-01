@@ -31,10 +31,8 @@ const Navbar = () => {
   const { data: ensName } = useEnsName({ address });
   const { data: ensAvatar } = useEnsAvatar({ name: ensName! });
 
-  console.log(ensAvatar, ensName, "data");
-
   return (
-    <div className="w-full">
+    <div className="w-full pr-8 pl-8 pt-6 pb-6 fixed top-0 z-10 bg-gray-100 dark:bg-gray-900 shadow-md">
       <nav className="container relative flex items-center justify-between  mx-auto lg:justify-between xl:px-0">
         <>
           <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">

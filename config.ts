@@ -1,10 +1,16 @@
-import { http, createConfig } from "wagmi";
-import { base, mainnet, optimism } from "wagmi/chains";
+import { createConfig, http } from 'wagmi'
+import { mainnet, sepolia } from 'wagmi/chains'
+
+declare module 'wagmi' { 
+  interface Register { 
+    config: typeof config 
+  } 
+} 
 
 export const config = createConfig({
-  chains: [mainnet, base],
+  chains: [mainnet, sepolia],
   transports: {
     [mainnet.id]: http(),
-    [base.id]: http(),
+    [sepolia.id]: http(),
   },
-});
+})
