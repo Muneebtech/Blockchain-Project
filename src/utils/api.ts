@@ -29,6 +29,6 @@ export const fetchApi = async (
       message: error.response?.data?.message || error.message,
       status: error.response?.status,
     };
-    alert(apiError.message);
+    console.log(apiError.message);
   }
 };

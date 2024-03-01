@@ -11,12 +11,11 @@ const AccountComponent: React.FC<AccountComponentProps> = ({
   ensName,
   ensAvatar,
 }) => (
-  <div className="flex items-center gap-2">
-    {ensAvatar && <img alt="ENS Avatar" src={ensAvatar} />}
-   Address: {address && <div>{ensName ? ensName : address}</div>}
+  <div className="flex items-center gap-2 justify-evenly">
+    <span className="hidden md:block">Address: {address}</span>
     <button
       onClick={disconnect}
-      className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5"
+      className="px-4 py-2 text-white bg-indigo-600  rounded-md md:ml-5"
     >
       Disconnect
     </button>
