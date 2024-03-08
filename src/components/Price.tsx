@@ -9,7 +9,7 @@ const Price = ({ data }: any) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setEthereumPrice(data.usdPrice));
-  }, [data]);
+  }, [data]); //unnecessary dependency, he is using serveside rendering for the data so useEffect doesn't matter instead useRedux on server level
 
   return (
     <motion.div
