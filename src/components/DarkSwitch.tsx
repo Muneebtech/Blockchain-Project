@@ -5,9 +5,11 @@ const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true), []); // will might cause re-rendering issues calling useState in useEffect
 
   if (!mounted) return null;
+
+  //When I first load into the app the icon is "light switch" and the header theme is "dark"
 
   return (
     <div className="flex items-center">

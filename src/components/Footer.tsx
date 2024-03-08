@@ -4,7 +4,7 @@ const Footer = () => {
   const { theme } = useTheme();
   const sectionBackgroundColor =
     theme === "dark" ? "bg-[#3C8AF4]" : "bg-[#A4A5FF]";
-  const sectionTextColor = theme === "dark" ? "text-white" : "text-gray-800";
+  const sectionTextColor = theme === "dark" ? "text-white" : "text-gray-800"; // Next Js render first on server and these checks can cause Hydration errors
   return (
     <footer className={`${sectionBackgroundColor} ${sectionTextColor} py-12`}>
       <div className="container mx-auto px-4">

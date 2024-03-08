@@ -1,5 +1,5 @@
 export interface AccountComponentProps {
-  address: any;
+  address: any; //address type is always a string
   disconnect: () => void;
   ensName: string | any;
   ensAvatar: string | any;
@@ -9,7 +9,7 @@ const AccountComponent: React.FC<AccountComponentProps> = ({
   address,
   disconnect,
   ensName,
-  ensAvatar,
+  ensAvatar, // why are there unused imports here?
 }) => (
   <div className="flex items-center gap-2 justify-evenly">
     <button

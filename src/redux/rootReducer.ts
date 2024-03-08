@@ -1,5 +1,5 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import ethereumReducer from "./EthereumSlice";
+import ethereumReducer from "./EthereumSlice"; //file naming convention error
 
 const rootReducer = combineReducers({
   ethereum: ethereumReducer,

@@ -63,7 +63,7 @@ const Home: React.FC<{ data: any }> = ({ data }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async () => { //we are not mutating data, use of const should have been made
   let data = await fetchEthereumPrice();
   return {
     props: {

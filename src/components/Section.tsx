@@ -9,6 +9,7 @@ interface SectionProps {
   reverse?: boolean;
 }
 
+//why using forwardRef here, and not using Image tag of Next js
 const Section: React.ForwardRefRenderFunction<HTMLDivElement, SectionProps> = (
   { title, description, imageSrc, imageAlt, reverse },
   ref

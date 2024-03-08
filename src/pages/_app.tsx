@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"; // Why import them if you didn't use
 import { WagmiProvider } from "wagmi";
 import { config } from "../../config";
 import { Provider } from "react-redux";
